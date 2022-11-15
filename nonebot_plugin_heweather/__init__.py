@@ -10,6 +10,20 @@ from .config import Config
 from .render_pic import render
 from .weather_data import Weather, ConfigError, CityNotFoundError
 
+__plugin_meta__ = PluginMetadata(
+    name="和风天气",
+    description="获取和风天气信息并转换为图片，不建议与默认天气插件同时使用",
+    usage="天气+地区 或 地区+天气",
+    config=Config,
+    extra={
+        "unique_name": "qweather",
+        "example": "武汉天气",
+        "author": "kexue <x@kexue.io>",
+        "version": "0.6.1",
+    },
+)
+
+
 plugin_config = Config.parse_obj(get_driver().config.dict())
 
 if plugin_config.qweather_apikey and plugin_config.qweather_apitype:
