@@ -5,6 +5,7 @@ from nonebot.log import logger
 from nonebot.params import RegexGroup
 from nonebot.matcher import Matcher
 from nonebot.adapters.onebot.v11 import MessageSegment
+from nonebot.plugin import PluginMetadata
 
 from .config import Config
 from .render_pic import render
